@@ -40,6 +40,26 @@
 							</form>
 						</div>
 					</div>
+					<div class="row">
+						<div class="column column-33">
+							<div class="card total-links text-center py-30">
+								<h5 class="font-500 m-0 mb-10">{{ __('Total Links') }}</h5>
+								<h2 class="font-600 m-0">{{ $totalLinks ?? 0 }}</h2>
+							</div>
+						</div>
+						<div class="column column-33">
+							<div class="card total-clicks text-center py-30">
+								<h5 class="font-500 m-0 mb-10">{{ __('Total Clicks') }}</h5>
+								<h2 class="font-600 m-0">{{ $totalClicks ?? 00 }}</h2>
+							</div>
+						</div>
+						<div class="column column-33">
+							<div class="card today-clicks text-center py-30">
+								<h5 class="font-500 m-0 mb-10">{{ __('Today\'s Clicks') }}</h5>
+								<h2 class="font-600 m-0">{{ $todayClicks ?? 00 }}</h2>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

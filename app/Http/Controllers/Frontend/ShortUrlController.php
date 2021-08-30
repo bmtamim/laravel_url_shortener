@@ -21,7 +21,10 @@ class ShortUrlController extends Controller
 
         $shortedLink = config('app.url') . '/' . $link->code;
 
-        return response()->json($shortedLink);
+        return response()->json([
+            'link'       => $shortedLink,
+            'link_count' => Link::query()->count(),
+        ]);
     }
 
 
