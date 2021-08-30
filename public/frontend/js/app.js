@@ -31,13 +31,17 @@ document.getElementById('shorten-btn').addEventListener('click', function (e) {
 document.getElementById('copy-url-btn').addEventListener('click', function () {
 
     let shortedUrl = document.getElementById('shorted-url');
+    let link = document.getElementById('link');
     let shortenButton = document.getElementById('shorten-btn');
-
+    let copySuccess = document.getElementById('copy_success');
     shortedUrl.select();
     shortedUrl.setSelectionRange(0, 999999999); /* For mobile devices */
 
     navigator.clipboard.writeText(shortedUrl.value).then(function () {
         shortenButton.removeAttribute('disabled');
+        copySuccess.innerHTML = 'The link has been copied to the clipboard, If not then please select the link and press <span>CTRL+C</span> or do <span>Right-click</span> and copy.';
+        copySuccess.style.display = 'block';
+        link.value = '';
     }, function (err) {
         alert('Could not copy text');
     });

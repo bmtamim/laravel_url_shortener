@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+button:disabled, button[disabled] {
+    cursor: not-allowed !important;
+}
+
 .section {
     padding: 100px 0;
 }
@@ -23,8 +27,18 @@
     align-items: center;
 }
 
-.error, #copy-url-box {
+.error, #copy-url-box, .success {
     display: none;
+}
+
+.error {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.success > span {
+    background: #f1f1f1;
+    font-weight: 500;
 }
 
 .is-invalid {
@@ -33,6 +47,10 @@
 
 .text-danger {
     color: #c84a4a !important;
+}
+
+.text-success {
+    color: #28a745 !important;
 }
 
 .text-white {
