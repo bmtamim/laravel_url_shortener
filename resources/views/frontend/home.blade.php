@@ -12,6 +12,7 @@
 						<div class="row">
 							<div class="column column-80">
 								<input type="text" id="shorted-url" value="test.com" readonly>
+								<p class="text-success success" id="copy_success"></p>
 							</div>
 							<div class="column">
 								<button class="button button-outline" id="copy-url-btn">Copy Url</button>
@@ -19,7 +20,7 @@
 						</div>
 					</div>
 					<div class="card">
-						<p class="text-center text-dark">Lorem ipsum dolor sit amet.</p>
+						<p class="text-center text-dark">Paste and get shorted url.</p>
 						<div class="form">
 							<form action="{{ route('short.url.store') }}" method="POST" id="link-form">
 								@csrf
