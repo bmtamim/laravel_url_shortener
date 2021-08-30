@@ -3,18 +3,15 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ShortUrlRequest;
 use App\Models\Link;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
 
 class ShortUrlController extends Controller
 {
-    public function store(Request $request)
+    public function store(ShortUrlRequest $request): JsonResponse
     {
-        $request->validate([
-            'link' => ['required', 'string', 'url'],
-        ]);
-
         $links = Link::query()->get();
 
         $link = Link::create([
@@ -26,6 +23,7 @@ class ShortUrlController extends Controller
 
         return response()->json($shortedLink);
     }
+
 
     private function generateCode($links): string
     {

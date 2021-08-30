@@ -20,10 +20,5 @@ Route::get('/', HomeController::class);
 
 Route::post('/short/url', [ShortUrlController::class, 'store'])->name('short.url.store');
 
-Route::get('/axios', function () {
-    return response()->json('Test Axios');
-})->name('axios');
-
-
 Route::get('{code}', RedirectUrlController::class)->name('redirect.url');
 
