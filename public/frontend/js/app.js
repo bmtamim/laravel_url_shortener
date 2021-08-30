@@ -15,13 +15,14 @@ document.getElementById('shorten-btn').addEventListener('click', function (e) {
                 copyUrlBox.style.display = 'block';
                 link_error.style.display = 'none';
                 totalLinks[0].children[1].innerText = response.data.link_count;
+                link.classList.remove('is-invalid');
             }
         })
         .catch(function (error) {
             if (422 === error.response.status) {
                 link.classList.add('is-invalid');
                 link_error.style.display = 'block';
-                link_error.innerText = error.response.data.errors.link[0];
+                link_error.innerHTML = error.response.data.errors.link[0];
             } else if (500 === error.response.status) {
                 alert('Server error, Please try again later.')
             }

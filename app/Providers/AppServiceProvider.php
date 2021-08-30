@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('frontend.home', function ($view) {
             $links = DB::table('links')->select('clicks')->get();
+
             $totalLinks = $links->count();
             $totalClicks = $links->sum('clicks');
             $todayClicks = DB::table('links')->select('clicks')->whereDate('updated_at', Carbon::today())->sum('clicks');

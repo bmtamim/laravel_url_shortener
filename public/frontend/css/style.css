@@ -118,3 +118,7 @@ button:disabled, button[disabled] {
 .button.shorten {
     background: #3D24B8;
 }
+
+.card.counter > h2 {
+    color: #3D24B8;
+}
