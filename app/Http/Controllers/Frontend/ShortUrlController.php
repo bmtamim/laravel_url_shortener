@@ -7,7 +7,6 @@ use App\DTO\ShortUrlDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ShortUrlRequest;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Str;
 
 class ShortUrlController extends Controller
 {
