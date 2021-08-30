@@ -1,18 +1,20 @@
 document.getElementById('shorten-btn').addEventListener('click', function (e) {
     event.preventDefault();
     let thisButton = this;
+    thisButton.setAttribute('disabled', 'disabled');
     let link = document.getElementById('link');
     let csrf_token = document.querySelector('#link-form input[name=_token]').value;
     let link_error = document.getElementById('link_error');
     let copyUrlBox = document.getElementById('copy-url-box');
-    thisButton.setAttribute('disabled', 'disabled');
+    let totalLinks = document.getElementsByClassName('total-links');
     axios.post("/short/url", {"link": link.value, "_token": csrf_token})
         .then(function (response) {
             let shortedUrl = document.getElementById('shorted-url');
             if (200 === response.status) {
-                shortedUrl.value = response.data;
+                shortedUrl.value = response.data.link;
                 copyUrlBox.style.display = 'block';
                 link_error.style.display = 'none';
+                totalLinks[0].children[1].innerText = response.data.link_count;
             }
         })
         .catch(function (error) {
