@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         browner12\helpers\HelperServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
         /*
          * Application Service Providers...
          */

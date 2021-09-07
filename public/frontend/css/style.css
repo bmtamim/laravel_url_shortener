@@ -122,3 +122,8 @@ button:disabled, button[disabled] {
 .card.counter > h2 {
     color: #3D24B8;
 }
+
+/*Header*/
+#main-header nav.sticky {
+    background: #3A0CA3 !important;
+}

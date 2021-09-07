@@ -20,7 +20,7 @@ class ShortUrlDTO extends DataTransferObject
 
     public static function createFromRequest(ShortUrlRequest $request): ShortUrlDTO
     {
-        self::$links = DB::table('links')->select('id', 'user_id', 'user_ip', 'code')->get();
+        self::$links = DB::table('links')->select('id', 'user_id', 'user_ip', 'code', 'created_at')->get();
         $data = [
             'user_id' => Auth::check() ? Auth::id() : null,
             'user_ip' => $request->ip(),
